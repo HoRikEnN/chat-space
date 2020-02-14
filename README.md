@@ -29,32 +29,45 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|index: trun, null: false, unique: true|
+|nickname|string|index: true, null: false, unique: true|
 |email|string|null: false|
 |password|string|null: false|
 
 ## Association
-- has_many :groups
+- has_many :messages
+- has_many :groups_users
+- has_many :groups, through :groups_users
 
 ## groupsテーブル
 
 |Column|Type|Option|
 |------|----|------|
-|groupname|string|null: false|
-|text|text||
-|image｜text||
-|user_id|intrger|null: false, foreign_key: true|
+|name|string|null: false|
 
 ## Association
+- has_many :messages
 - has_many :users
+- has_many :users, through :groups_users
+
+
+## messagesテーブル
+
+|Column|Type|Option|
+|------|----|------|
+|text|text||
+|image|text||
+
+## Association
+belongs_to :user
+
 
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
