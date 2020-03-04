@@ -1,0 +1,26 @@
+.side-bar
+  .side-header
+    .side-header__menu
+      %h3.side-header__menu__username
+        nick
+      %ul.side-header__menu__lists
+        %li.side-header__menu__new-group
+          = link_to "#" do
+            = icon('fa', 'edit',class: 'icon')
+        %li.side-header__menu__edit-user
+          = link_to "#" do
+            = icon('fa', 'cog',class: 'icon')
+
+  .groups
+    .group
+      = link_to "#", class:"group" do
+        %p.group__group-list
+          test
+        %p.group__new-message
+          まだメッセージがありません
+    .group
+      = link_to "#", class:"group" do
+        %p.group__group-list
+          test
+        %p.group__new-message
+          まだメッセージがありません

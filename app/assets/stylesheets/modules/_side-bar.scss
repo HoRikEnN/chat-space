@@ -1,0 +1,52 @@
+.side-bar {
+  box-sizing: border-box;
+  width: 300px;
+  color: #ffffff;
+  .side-header {
+    height: 100px;
+    background-color:#253141;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    &__menu {
+      height: 20px;
+      width: 100%;
+      background-color: #253141;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+    .side-header__menu__lists {
+      display: flex;
+    }
+    &__menu__new-group {
+      margin-left: 0.3rem;
+    }
+    &__menu__edit-user {
+      margin-left: 0.3rem;
+    }
+
+    .icon {
+      color: #ffffff;
+      font-size: 15px;
+    }
+  }
+
+  .groups {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px;
+    .group {
+      color: #ffffff;
+      text-decoration: none;
+      margin-bottom: 40px;
+      &__group-list {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__new-message {
+        font-size: 11px;
+      }
+    }
+  }
+}
